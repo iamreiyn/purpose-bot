@@ -21,7 +21,7 @@ for (const file of commands) {
 }
 
 client.once('ready', () => {
-	console.log('STARTED: Purpose is now Online');
+	console.log('STARTED: Purpose is now Online.');
 	client.user.setActivity('with -help | purpose.gg', { type: 'PLAYING' });
 });
 
