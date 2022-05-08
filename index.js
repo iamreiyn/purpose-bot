@@ -27,7 +27,7 @@ client.once('ready', () => {
 
 client.on('messageCreate', async msg => {
 	// Incomplete work
-	if (msg.content === 'dickhead' || msg.content === 'nigger') return msg.reply('Please avoid using offensive language in this discord server!');
+	if (msg.content === 'idiot' || msg.content === 'retard') return msg.reply('Please avoid using offensive language in this discord server!');
 	if (msg.content === 'Hello' || msg.content === 'Hey' || msg.content === 'Guys' || msg.content === 'Hi') return msg.channel.send(`Hey! ${msg.author}`);
 	if (msg.content === 'How are you' || msg.content === 'Whatsup' || msg.content === 'Sup') {
 		const contents = ['All good, what about you?', 'I\'m good, and you?', 'Fine', 'Not bad, another day of moderating the server', 'Good, wbu?'];
