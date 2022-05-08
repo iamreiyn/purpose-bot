@@ -1,16 +1,9 @@
-const Discord = require('discord.js');
-
+const { MessageEmbed } = require('discord.js');
 exports.run = async (client, message) => {
 
-	const row = new Discord.MessageActionRow()
-		.addComponents(
-			new Discord.MessageButton()
-				.setCustomId('helpNextPage')
-				.setLabel('Next Page')
-				.setStyle('PRIMARY'),
-		);
 
-	const embed = new Discord.MessageEmbed()
+
+	const embed = new MessageEmbed()
 		.setTitle('Purpose\'s commands')
 		.setColor('RED')
 		.setDescription('**MODERATION**')
@@ -28,7 +21,7 @@ exports.run = async (client, message) => {
 		.addField('-remind <seconds> <opt:reason>*', 'Reminds you after X seconds for the X reason')
 		.addField('-wotd', 'Word of the day, to learn some new English words daily')
 		.addField('-dict <word>', 'An open dictionary that you can use within discord');
-	message.channel.send({ embeds: [embed], components: [row] });
+	message.channel.send({ embeds: [embed] });
 };
 
 exports.name = 'help';
