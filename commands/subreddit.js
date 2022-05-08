@@ -6,7 +6,6 @@ exports.run = async (client, message, args) => {
 	let lastTimestamp = new Date() / 1000;
 	let latestPosts = [];
 	setInterval(() => {
-		console.log('Data Collected!');
 		axios.get(`https://www.reddit.com/r/${args[1]}/new.json?limit=1`)
 			.then(res => {
 				latestPosts = [];
@@ -30,6 +29,7 @@ exports.run = async (client, message, args) => {
 				}
 			});
 	}, 5000);
+	message.reply(`Sucessfully subscribed to the **${args[1]}** subreddit, new posts will appear here`);
 };
 
 exports.name = 'reddit';
