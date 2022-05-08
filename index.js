@@ -1,10 +1,10 @@
-const Discord = require('discord.js');
-const client = new Discord.Client({ intents: ['GUILDS', 'GUILD_MESSAGES'] });
+const { Client, Collection } = require('discord.js');
+const client = new Client({ intents: ['GUILDS', 'GUILD_MESSAGES'] });
 const config = require('./config.json');
 client.config = config;
 const fs = require('node:fs');
 
-client.commands = new Discord.Collection();
+client.commands = new Collection();
 
 const events = fs.readdirSync('./events').filter(file => file.endsWith('.js'));
 for (const file of events) {
@@ -25,9 +25,16 @@ client.once('ready', () => {
 	client.user.setActivity('with -help | purpose.gg', { type: 'PLAYING' });
 });
 
+const badWords = ["idiot", "retard"];
+
 client.on('messageCreate', async msg => {
-	// Incomplete work
-	if (msg.content === 'idiot' || msg.content === 'retard') return msg.reply('Please avoid using offensive language in this discord server!');
+	// INCOMPLETE WORK
+	badWords.forEach(word => {
+		if (msg.content.includes(word)) {
+			return msg.reply('Please avoid using offensive language in this discord server!');
+		}
+	});	
+
 	if (msg.content === 'Hello' || msg.content === 'Hey' || msg.content === 'Guys' || msg.content === 'Hi') return msg.channel.send(`Hey! ${msg.author}`);
 	if (msg.content === 'How are you' || msg.content === 'Whatsup' || msg.content === 'Sup') {
 		const contents = ['All good, what about you?', 'I\'m good, and you?', 'Fine', 'Not bad, another day of moderating the server', 'Good, wbu?'];
