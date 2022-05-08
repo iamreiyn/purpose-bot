@@ -21,14 +21,22 @@ for (const file of commands) {
 }
 
 client.once('ready', () => {
-	console.log('STARTED: Purpose is now Online.');
+	console.log('STARTED: Purpose is now Online');
 	client.user.setActivity('with -help | purpose.gg', { type: 'PLAYING' });
 });
 
 client.on('messageCreate', async msg => {
-	if (msg.content === 'dickhead' || msg.content === 'nigger' || msg.content === 'bhenchod') return msg.channel.send(`*MDB 783 Guard slaps ${msg.author} for using bad words.*`);
+	// Incomplete work
+	if (msg.content === 'dickhead' || msg.content === 'nigger') return msg.reply('Please avoid using offensive language in this discord server!');
 	if (msg.content === 'Hello' || msg.content === 'Hey' || msg.content === 'Guys' || msg.content === 'Hi') return msg.channel.send(`Hey! ${msg.author}`);
-	if (msg.content === 'How are you' || msg.content === 'Whatsup' || msg.content === 'Sup') return msg.reply('All good, what about you?');
+	if (msg.content === 'How are you' || msg.content === 'Whatsup' || msg.content === 'Sup') {
+		const contents = ['All good, what about you?', 'I\'m good, and you?', 'Fine', 'Not bad, another day of moderating the server', 'Good, wbu?'];
+		const random = Math.floor(Math.random() * contents.length);
+		msg.reply(contents[random]);
+	}
+	if (msg.content.match(/doing/) || msg.content.match(/good/)) {
+		msg.reply('That is nice to hear!');
+	}
 });
 
 client.login(config.token);
