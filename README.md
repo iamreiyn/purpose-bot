@@ -22,4 +22,3 @@ The multipurpose discord bot with an AI chat system, server management<br>modera
 | remind  | Creates a reminder with the specified reason, upon execution it replies to the messag |
 | roll  | Returns a random number between the lower and higher numbers, 0-100 if no argument is given |
 | wotd  | Returns the Word Of The Day (API: Meriam Webster) |
-| roll  | Returns a random number between the lower and higher numbers, 0-100 if no argument is given |
