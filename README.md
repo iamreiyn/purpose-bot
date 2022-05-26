@@ -1,5 +1,5 @@
 # Purpose Discord Bot
-The multipurpose discord bot with server management, moderation and more!
+A multipurpose discord bot project powered by discord.js<br> with several commands for server moderation, fun, utility & more!
 
 
 ⚙️ Moderation Commands: `arole`, `subreddit`, `purge`, `regdate`, `mems`<br>
