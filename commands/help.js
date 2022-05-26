@@ -1,8 +1,6 @@
 const { MessageEmbed } = require('discord.js');
 exports.run = async (client, message) => {
 
-
-
 	const embed = new MessageEmbed()
 		.setTitle('Purpose\'s commands')
 		.setColor('RED')
