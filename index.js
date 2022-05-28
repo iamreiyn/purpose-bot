@@ -13,14 +13,17 @@ for (const file of events) {
 	client.on(eventName, event.bind(null, client));
 }
 
-const commands = readdirSync('./commands').filter((file) =>
-	file.endsWith('.js'),
-);
-for (const file of commands) {
-	const commandName = file.split('.')[0];
-	const command = require(`./commands/${file}`);
-	client.commands.set(commandName, command);
+const commandFolders = readdirSync('./commands');
+for (const folder of commandFolders) {
+	const commandFiles = readdirSync(`./commands/${folder}`)
+		.filter((file) => file.endsWith('.js'));
+	for (const file of commandFiles) {
+		const commandName = file.split('.')[0];
+		const command = require(`./commands/${folder}/${file}`);
+		client.commands.set(commandName, command);
+	}
 }
+
 
 client.once('ready', () => {
 	console.log(
@@ -43,31 +46,6 @@ client.on('messageCreate', async (msg) => {
 			);
 		}
 	});
-
-	if (
-		msg.content === 'Hello' ||
-    msg.content === 'Hey' ||
-    msg.content === 'Guys' ||
-    msg.content === 'Hi'
-	) {return msg.channel.send(`Hey! ${msg.author}`);}
-	if (
-		msg.content === 'How are you' ||
-    msg.content === 'Whatsup' ||
-    msg.content === 'Sup'
-	) {
-		const contents = [
-			'All good, what about you?',
-			'I\'m good, and you?',
-			'Fine',
-			'Not bad, another day of moderating the server',
-			'Good, wbu?',
-		];
-		const random = Math.floor(Math.random() * contents.length);
-		msg.reply(contents[random]);
-	}
-	if (msg.content.match(/doing/) || msg.content.match(/good/)) {
-		msg.reply('That is nice to hear!');
-	}
 });
 
 client.login(process.env.token);

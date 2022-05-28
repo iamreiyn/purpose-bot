@@ -21,5 +21,3 @@ exports.run = async (client, message) => {
 		.addField('-dict <word>', 'An open dictionary that you can use within discord');
 	message.channel.send({ embeds: [embed] });
 };
-
-exports.name = 'help';

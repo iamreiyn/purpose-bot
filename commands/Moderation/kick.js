@@ -20,5 +20,3 @@ exports.run = async (client, message, args) => {
 		console.log(error);
 	});
 };
-
-exports.name = 'kick';

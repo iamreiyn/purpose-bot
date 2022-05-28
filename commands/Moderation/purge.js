@@ -11,5 +11,3 @@ exports.run = async (client, message, args) => {
 		messages.delete();
 	}, 2000);
 };
-
-exports.name = 'purge';

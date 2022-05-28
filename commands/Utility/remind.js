@@ -10,5 +10,3 @@ exports.run = (client, message, args) => {
 		message.reply('Reminder executed after **' + args[0] + '** seconds (REASON: ' + reason + ')');
 	}, parseInt(timeout));
 };
-
-exports.name = 'remind';

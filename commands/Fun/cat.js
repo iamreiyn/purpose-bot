@@ -10,7 +10,7 @@ exports.run = (client, message) => {
 				.setTitle('Here is a kitty!')
 				.setColor('RED')
 				.setImage(response.request.uri.href)
-				.setAuthor(message.author.username);
+				.setAuthor({ name: message.author.username });
 			message.channel.send({ embeds: [embed] });
 		}
 		else {
@@ -18,5 +18,3 @@ exports.run = (client, message) => {
 		}
 	});
 };
-
-exports.name = 'cat';

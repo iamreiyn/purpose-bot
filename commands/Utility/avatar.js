@@ -9,8 +9,6 @@ exports.run = async (client, message) => {
 		.setTitle(`${member.username}'s Avatar`)
 		.setImage(avatar)
 		.setColor('BLACK')
-		.setAuthor(member.username);
+		.setAuthor({ name: member.username });
 	message.channel.send({ embeds: [embed] });
 };
-
-exports.name = 'avatar';

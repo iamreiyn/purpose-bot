@@ -28,5 +28,3 @@ exports.run = async (client, message, args) => {
 		message.reply('You do not have permissions to assign this role!');
 	}
 };
-
-exports.name = 'addrole';

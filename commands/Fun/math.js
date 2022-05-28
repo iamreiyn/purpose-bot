@@ -29,5 +29,3 @@ exports.run = async (client, message, args) => {
 		message.reply('Invalid format, please use -math 230+60 as for example');
 	}
 };
-
-exports.name = 'math';

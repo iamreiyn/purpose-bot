@@ -11,5 +11,3 @@ exports.run = async (client, message, args) => {
 		message.react('✅');
 	}
 };
-
-exports.name = 'echo';

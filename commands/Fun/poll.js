@@ -7,5 +7,3 @@ exports.run = async (client, message, args) => {
 		// Something
 	});
 };
-
-exports.name = 'poll';

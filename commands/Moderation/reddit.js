@@ -31,5 +31,3 @@ exports.run = async (client, message, args) => {
 	}, 8000);
 	message.reply(`Sucessfully subscribed to the **${args[1]}** subreddit, new posts will appear here`);
 };
-
-exports.name = 'reddit';

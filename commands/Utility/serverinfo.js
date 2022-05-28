@@ -12,5 +12,3 @@ exports.run = async (client, message) => {
 		.setFooter({ text: client.user.username, iconURL: client.user.avatarURL });
 	message.channel.send({ embeds: [embed] });
 };
-
-exports.name = 'serverinfo';
